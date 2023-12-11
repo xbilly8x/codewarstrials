@@ -1,1 +1,91 @@
+My first js was a this problem:
+
+You live in the city of Cartesia where all roads are laid out in a perfect grid. You arrived ten minutes too early to an appointment, so you decided to take the opportunity to go for a short walk. The city provides its citizens with a Walk Generating App on their phones -- everytime you press the button it sends you an array of one-letter strings representing directions to walk (eg. ['n', 's', 'w', 'e']). You always walk only a single block for each letter (direction) and you know it takes you one minute to traverse one city block, so create a function that will return true if the walk the app gives you will take you exactly ten minutes (you don't want to be early or late!) and will, of course, return you to your starting point. Return false otherwise.
+
+Note: you will always receive a valid array containing a random assortment of direction letters ('n', 's', 'e', or 'w' only). It will never give you an empty array (that's not a walk, that's standing still!).
+
+
+
+
+
+my solution:
+function walkTime(walk) {
+    //insert brilliant code here
+    var walkLength = walk.length;
+    if (walkLength === 10) {
+      return true;
+    }
+    else {
+      return false;
+    }
+  }
+
+findEndPosition = (Arr) => {
+    var y = 0
+    if (Arr.length > 10) {
+        return false
+    }
+    else {    
+    Arr.forEach((x) => {
+        if (x === 'n') {
+            y++;
+        }
+        if (x === 's') {
+            y--;
+        }
+        if (x === 'e') {
+            y++;
+        }
+        if (x === 'w') {
+            y--;
+        }
+    })
+    };
+    if (y === 0) {
+        return true;
+    }
+    else {
+        return false;
+    }
+}
+
+
+
+
+My second challenge was:
+
+Deoxyribonucleic acid (DNA) is a chemical found in the nucleus of cells and carries the "instructions" for the development and functioning of living organisms.
+
+If you want to know more: http://en.wikipedia.org/wiki/DNA
+
+In DNA strings, symbols "A" and "T" are complements of each other, as "C" and "G". Your function receives one side of the DNA (string, except for Haskell); you need to return the other complementary side. DNA strand is never empty or there is no DNA at all (again, except for Haskell).
+
+More similar exercise are found here: http://rosalind.info/problems/list-view/ (source)
+
+Example: (input --> output)
+
+"ATTGC" --> "TAACG"
+"GTAT" --> "CATA"
+
+
+
+My solution:
+
+function DNAStrand(dna){
+ var str = "";
+  for(var i = 0 ; i < dna.length; i++){
+    if(dna.charAt(i) == "A"){
+      str += "T"
+    
+    } if (dna.charAt(i) == "T"){
+      str += "A"
+    } if (dna.charAt(i) == "C"){
+      str += "G"
+  }  if (dna.charAt(i) == "G"){
+      str += "C"
+    }
+}
+  return str
+  
+  }
 
